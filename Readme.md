@@ -232,23 +232,3 @@ The program:
 4. Performs the correct operation using the `calculate` function.
 
 ---
-
-# Repository Structure
-
-```
-.
-├── calculator/
-│   └── main.hs
-│
-├── markov_chain/
-│   ├── main.hs
-│   └── text.txt
-│
-├── todo_cli/
-│   └── main.hs
-│
-├── mini_interpreter/
-    └── main.hs
-```
-
----
