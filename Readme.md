@@ -11,51 +11,58 @@ These projects helped me build a deeper understanding of functional programming 
 
 # Projects Overview
 
-## 1. Calculator
 
-A simple command-line calculator that evaluates expressions with two operands.
+# 1. Mini Expression Interpreter
 
-Example input:
+A small interpreter that parses and evaluates arithmetic expressions.
 
-```
-3 + 5
-```
-
-Example output:
+Supported operations:
 
 ```
-8
++  -  *  /
+( )
+```
+
+Example:
+
+```
+(3 + 4) * 5
+```
+
+Output:
+
+```
+35
 ```
 
 ### Features
 
-* Supports basic arithmetic operations:
-
-  * addition (`+`)
-  * subtraction (`-`)
-  * multiplication (`*`)
-  * division (`/`)
-* Simple expression parsing using `words`
-* Pattern matching for operator handling
+* Supports **BODMAS precedence**
+* Parentheses support
+* Recursive descent parser
+* Tokenization of input
+* Interactive REPL
 
 ### Concepts Used
 
-* Pattern Matching
-* Case Expressions
-* Basic IO
-* String parsing
-* Function definitions
+* Abstract Syntax Trees (AST)
+* Recursive parsing
+* Tokenization
+* Expression evaluation
+* Functional recursion
+* Interpreter design
 
-### How It Works
+### Architecture
 
-The program:
+Expression parsing is split into three levels:
 
-1. Reads input from the user.
-2. Splits the expression into parts using `words`.
-3. Pattern matches the format `[a, op, b]`.
-4. Performs the correct operation using the `calculate` function.
+```
+Expression -> + -
+Term       -> * /
+Factor     -> numbers or parentheses
+```
 
----
+This structure automatically enforces operator precedence.
 
 # 2. Markov Chain Text Generator
 
@@ -178,57 +185,49 @@ write project - done
 
 ---
 
-# 4. Mini Expression Interpreter
+## 4. Calculator
 
-A small interpreter that parses and evaluates arithmetic expressions.
+A simple command-line calculator that evaluates expressions with two operands.
 
-Supported operations:
-
-```
-+  -  *  /
-( )
-```
-
-Example:
+Example input:
 
 ```
-(3 + 4) * 5
+3 + 5
 ```
 
-Output:
+Example output:
 
 ```
-35
+8
 ```
 
 ### Features
 
-* Supports **BODMAS precedence**
-* Parentheses support
-* Recursive descent parser
-* Tokenization of input
-* Interactive REPL
+* Supports basic arithmetic operations:
+
+  * addition (`+`)
+  * subtraction (`-`)
+  * multiplication (`*`)
+  * division (`/`)
+* Simple expression parsing using `words`
+* Pattern matching for operator handling
 
 ### Concepts Used
 
-* Abstract Syntax Trees (AST)
-* Recursive parsing
-* Tokenization
-* Expression evaluation
-* Functional recursion
-* Interpreter design
+* Pattern Matching
+* Case Expressions
+* Basic IO
+* String parsing
+* Function definitions
 
-### Architecture
+### How It Works
 
-Expression parsing is split into three levels:
+The program:
 
-```
-Expression -> + -
-Term       -> * /
-Factor     -> numbers or parentheses
-```
-
-This structure automatically enforces operator precedence.
+1. Reads input from the user.
+2. Splits the expression into parts using `words`.
+3. Pattern matches the format `[a, op, b]`.
+4. Performs the correct operation using the `calculate` function.
 
 ---
 
