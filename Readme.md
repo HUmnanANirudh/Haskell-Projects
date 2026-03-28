@@ -64,6 +64,8 @@ Factor     -> numbers or parentheses
 
 This structure automatically enforces operator precedence.
 
+- - -
+
 # 2. Markov Chain Text Generator
 
 This project generates random sentences using a **Markov Chain text model**.
